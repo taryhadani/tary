@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class ProgramMenu {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) 
+            // Menampilkan menu
+            tampilkanMenu();
+            int pilihan = scanner.nextInt();
+            
+            // Pilihan berdasarkan menu
+            switch (pilihan) {
+                case 1:
+                    pilihIf(scanner);
+                    break;
+                case 2:
+                    pilihFor();
+                    break;
+                case 3:
+                    pilihWhile();
+                    break;
+                case 4:
+                    pilihDoWhile();
+                    break;
+                case 5:
+                    System.out.println("Anda telah memilih untuk kembali ke menu sebelumnya.\n");
+                    break;
+                case 6:
+                    System.out.println("Terima kasih telah menggunakan program ini! Program selesai.");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Pilihan yang Anda masukkan tidak valid. Silakan coba lagi.\n");
+            }
+        }
+    }
+
+    // Fungsi untuk menampilkan menu
+    public static void tampilkanMenu() {
+        System.out.println("*******************************");
+        System.out.println("          Pilihan Menu         ");
+        System.out.println("*******************************");
+        System.out.println("1. Pilih If");
+        System.out.println("2. Pilih For");
+        System.out.println("3. Pilih While");
+        System.out.println("4. Pilih Do-While");
+        System.out.println("5. Kembali ke Menu Utama");
+        System.out.println("6. Keluar");
+        System.out.print("Silakan pilih opsi (1/2/3/4/5/6): ");
+    }
+
+    // Contoh if-else
+    public static void pilihIf(Scanner scanner) {
+        System.out.print("\nMasukkan sebuah angka: ");
+        int angka = scanner.nextInt();
+        
+        if (angka > 0) {
+            System.out.println("Anda memasukkan angka positif.");
+        } else if (angka < 0) {
+            System.out.println("Anda memasukkan angka negatif.");
+        } else {
+            System.out.println("Anda memasukkan angka nol.");
+        }
+        System.out.println(); // Menambahkan baris kosong
+    }
+
+    // Contoh for loop
+    public static void pilihFor() {
+        System.out.println("\nMencetak angka dari 1 hingga 5:");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Angka: " + i);
+        }
+        System.out.println(); // Menambahkan baris kosong
+    }
+
+    // Contoh while loop
+    public static void pilihWhile() {
+        System.out.println("\nMenggunakan while loop untuk mencetak angka:");
+        int i = 1;
+        while (i <= 5) {
+            System.out.println("Angka: " + i);
+            i++;
+        }
+        System.out.println(); // Menambahkan baris kosong
+    }
+
+    // Contoh do-while loop
+    public static void pilihDoWhile() {
+        System.out.println("\nMenggunakan do-while loop untuk mencetak angka:");
+        int i = 1;
+        do {
+            System.out.println("Angka: " + i);
+            i++;
+        } while (i <= 5);
+        System.out.println(); // Menambahkan baris kosong
+    }
+}
